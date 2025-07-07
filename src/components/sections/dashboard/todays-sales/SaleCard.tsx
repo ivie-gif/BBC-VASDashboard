@@ -1,12 +1,15 @@
 import { ReactElement } from 'react';
 import { Box, Stack, Typography } from '@mui/material';
-import Image from 'components/base/Image';
 import { SaleItem } from 'data/sales-data';
 
 const SaleCard = ({ saleItem }: { saleItem: SaleItem }): ReactElement => {
+  const Icon = saleItem.icon;
+
   return (
     <Stack gap={6} p={5} borderRadius={4} height={1} bgcolor="background.default">
-      <Image src={saleItem.icon} alt={saleItem.subtitle} width={26} height={26} />
+      {/* <Image src={saleItem.icon} alt={saleItem.subtitle} width={26} height={26} /> */}
+
+      <Icon style={{ width: 26, height: 26 }} />
       <Box>
         <Typography variant="h4" color="common.white" mb={4}>
           {saleItem.title}

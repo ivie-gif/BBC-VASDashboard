@@ -74,7 +74,7 @@ const Topbar = ({
           >
             <IconifyIcon icon="mdi:search" />
           </IconButton>
-          <TextField
+          {/* <TextField
             variant="filled"
             fullWidth
             placeholder="Search here..."
@@ -88,7 +88,7 @@ const Topbar = ({
                 </InputAdornment>
               ),
             }}
-          />
+          /> */}
         </Stack>
         <Stack
           direction="row"
@@ -106,7 +106,7 @@ const Topbar = ({
             )}
           </IconButton>
 
-          <Badge
+          {/* <Badge
             color="error"
             badgeContent=" "
             variant="dot"
@@ -124,7 +124,7 @@ const Topbar = ({
             >
               <IconifyIcon icon="ph:bell-bold" width={29} height={32} />
             </IconButton>
-          </Badge>
+          </Badge> */}
           <UserDropdown />
         </Stack>
       </Toolbar>
