@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Link, List, Toolbar } from '@mui/material';
+import { Link, List, Toolbar, Typography } from '@mui/material';
 import navItems from 'data/nav-items';
 import SimpleBar from 'simplebar-react';
 import NavItem from './NavItem';
@@ -8,7 +8,7 @@ import Image from 'components/base/Image';
 import logoWithText from '../../../assets/logoBig.png';
 // import logo from '/LOGO.png';
 import { rootPaths } from 'routes/paths';
-import LogoImg from '../../../assets/logoImg.png'
+import LogoImg from '../../../assets/logoImg.png';
 
 const Sidebar = ({ open }: { open: boolean }): ReactElement => {
   return (
@@ -18,33 +18,29 @@ const Sidebar = ({ open }: { open: boolean }): ReactElement => {
           position: 'fixed',
           height: 98,
           zIndex: 1,
-          bgcolor: 'background.default',
+          bgcolor: '#D36128',
           p: 0,
           justifyContent: 'center',
           width: open ? drawerOpenWidth - 1 : drawerCloseWidth - 1,
         }}
       >
-        <Link
-          href={rootPaths.homeRoot}
-          sx={{
-            mt: 3,
-          }}
-        >
-          <Image
-            src={open ? logoWithText : LogoImg}
-            alt={open ? 'logo with text' : 'logo'}
-            height={40}
-          />
+        <Link href={rootPaths.homeRoot} sx={{ textDecoration: 'none' }}>
+          {open ? (
+            <Typography variant="h3" sx={{ fontWeight: 700, color: '#000' }}>
+              BroadBased
+            </Typography>
+          ) : (
+            <Image src={LogoImg} alt="logo" height={40} />
+          )}
         </Link>
-      </Toolbar> 
+      </Toolbar>
       <SimpleBar style={{ maxHeight: '100vh' }}>
         <List
           component="nav"
           sx={{
             mt: 24.5,
-            py: 2.5,
             height: 724,
-            justifyContent: 'space-between',
+            position: 'fixed',
           }}
         >
           {navItems.map((navItem) => (

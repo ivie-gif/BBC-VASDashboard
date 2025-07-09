@@ -1,9 +1,9 @@
-import { Link, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import { Link, ListItem, ListItemButton, ListItemIcon, ListItemText, SxProps } from '@mui/material';
 import IconifyIcon from 'components/base/IconifyIcon';
 import { NavItem as NavItemProps } from 'data/nav-items';
 import { useLocation } from 'react-router-dom';
 
-const NavItem = ({ navItem, open }: { navItem: NavItemProps; open: boolean }) => {
+const NavItem = ({ navItem, open, }: { navItem: NavItemProps; open: boolean, sx?: SxProps }) => {
   const { pathname } = useLocation();
   return (
     <ListItem
@@ -22,18 +22,19 @@ const NavItem = ({ navItem, open }: { navItem: NavItemProps; open: boolean }) =>
         LinkComponent={Link}
         href={navItem.path}
         sx={{
+          px: 6,
           opacity: navItem.active ? 1 : 0.5,
-          bgcolor: pathname === navItem.path ? (open ? 'primary.main' : '') : 'background.default',
+          bgcolor: pathname === navItem.path ? (open ? '#1677FF' : '') : 'transparent',
           '&:hover': {
             bgcolor:
               pathname === navItem.path
                 ? open
-                  ? 'primary.dark'
+                  ? '#1677FF'
                   : 'background.paper'
                 : 'background.paper',
           },
           '& .MuiTouchRipple-root': {
-            color: pathname === navItem.path ? 'primary.main' : 'text.disabled',
+            color: pathname === navItem.path ? '#1677FF' : 'text.disabled',
           },
         }}
       >

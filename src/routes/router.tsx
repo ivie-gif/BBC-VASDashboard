@@ -20,6 +20,7 @@ const Dashboard = lazy<() => ReactElement>(() => import('pages/dashboard/Dashboa
 const Login = lazy<() => ReactElement>(() => import('pages/authentication/Login'));
 const SignUp = lazy<() => ReactElement>(() => import('pages/authentication/SignUp'));
 const ErrorPage = lazy<() => ReactElement>(() => import('pages/error/ErrorPage'));
+const SMSDetails = lazy<() => ReactElement>(() => import('pages/sms/smsDetails'));
 
 const routes: RouteObject[] = [
   {
@@ -42,6 +43,10 @@ const routes: RouteObject[] = [
           {
             index: true,
             element: <Dashboard />,
+          },
+          {
+            path: paths.smsDetails,
+            element: <SMSDetails />,
           },
         ],
       },

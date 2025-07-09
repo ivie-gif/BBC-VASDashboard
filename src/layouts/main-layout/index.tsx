@@ -8,7 +8,7 @@ export const drawerOpenWidth = 240;
 export const drawerCloseWidth = 110;
 
 const MainLayout = ({ children }: PropsWithChildren): ReactElement => {
-  const [open, setOpen] = useState<boolean>(false);
+  const [open, setOpen] = useState<boolean>(true);
   const handleDrawerToggle = () => setOpen(!open);
 
   return (
