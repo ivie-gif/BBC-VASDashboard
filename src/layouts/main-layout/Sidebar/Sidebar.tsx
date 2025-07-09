@@ -5,8 +5,6 @@ import SimpleBar from 'simplebar-react';
 import NavItem from './NavItem';
 import { drawerCloseWidth, drawerOpenWidth } from '..';
 import Image from 'components/base/Image';
-import logoWithText from '../../../assets/logoBig.png';
-// import logo from '/LOGO.png';
 import { rootPaths } from 'routes/paths';
 import LogoImg from '../../../assets/logoImg.png';
 
@@ -30,7 +28,10 @@ const Sidebar = ({ open }: { open: boolean }): ReactElement => {
               BroadBased
             </Typography>
           ) : (
-            <Image src={LogoImg} alt="logo" height={40} />
+            // <Image src={LogoImg} alt="logo" height={40} />
+            <Typography variant="h3" sx={{ fontWeight: 700, color: '#000' }}>
+            BBC
+          </Typography>
           )}
         </Link>
       </Toolbar>

@@ -47,8 +47,8 @@ const NavItem = ({ navItem, open, }: { navItem: NavItemProps; open: boolean, sx?
               pathname === navItem.path
                 ? open
                   ? 'background.default'
-                  : 'primary.main'
-                : 'text.primary',
+                  : '#1677FF'
+                : '#1677FF',
           }}
         >
           <IconifyIcon icon={navItem.icon} width={1} height={1} />

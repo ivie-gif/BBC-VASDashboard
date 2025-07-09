@@ -18,7 +18,7 @@ interface ColorModeContextType {
 
 const ColorModeContext = createContext<ColorModeContextType>({
   toggleColorMode: () => {},
-  mode: 'dark',
+  mode: 'light',
 });
 
 export const useColorMode = (): ColorModeContextType => {
@@ -30,7 +30,7 @@ interface ColorModeProviderProps {
 }
 
 export const ColorModeProvider = ({ children }: ColorModeProviderProps) => {
-  const [mode, setMode] = useState<Mode>('dark');
+  const [mode, setMode] = useState<Mode>('light');
 
   // Optional: persist mode across refreshes
   useEffect(() => {
