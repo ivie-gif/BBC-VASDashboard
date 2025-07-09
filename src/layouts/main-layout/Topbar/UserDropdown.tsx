@@ -41,11 +41,11 @@ const UserDropdown = (): ReactElement => {
           <Avatar src={profile} sx={{ width: 44, height: 44 }} />
         </Tooltip>
         <IconifyIcon
-          color="common.white"
           icon="mingcute:down-fill"
           width={22.5}
           height={22.5}
           sx={(theme) => ({
+            color: (theme) => (theme.palette.mode === 'dark' ? '#fff' : '#000'),
             transform: menuOpen ? `rotate(180deg)` : `rotate(0deg)`,
             transition: theme.transitions.create('all', {
               easing: theme.transitions.easing.sharp,

@@ -16,6 +16,7 @@ import { useBreakpoints } from 'providers/BreakpointsProvider';
 import { useColorMode } from '../../../theme/components/ColorModeProvider';
 import ToggleOnIcon from '@mui/icons-material/ToggleOn';
 import ToggleOffIcon from '@mui/icons-material/ToggleOff';
+import { useTheme } from '@mui/material';
 
 const Topbar = ({
   open,
@@ -28,7 +29,7 @@ const Topbar = ({
   const { toggleColorMode, mode } = useColorMode();
 
   const isMobileScreen = down('sm');
-
+  const theme = useTheme();
 
   return (
     <AppBar
@@ -54,7 +55,13 @@ const Topbar = ({
           height: 116,
         }}
       >
-        <Stack direction="row" gap={2} alignItems="center" ml={2.5} flex="1 1 52.5%">
+        <Stack
+          direction="row"
+          gap={2}
+          alignItems="center"
+          ml={2.5}
+          flex="1 1 52.5%"
+        >
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -63,32 +70,11 @@ const Topbar = ({
           >
             <IconifyIcon
               icon={open ? 'ri:menu-unfold-4-line' : 'ri:menu-unfold-3-line'}
-              color="common.white"
+              sx={{
+                color: (theme) => (theme.palette.mode === 'dark' ? '#fff' : '#000'),
+              }}
             />
           </IconButton>
-          <IconButton
-            color="inherit"
-            sx={{
-              display: { xs: 'flex', sm: 'none' },
-            }}
-          >
-            <IconifyIcon icon="mdi:search" />
-          </IconButton>
-          {/* <TextField
-            variant="filled"
-            fullWidth
-            placeholder="Search here..."
-            sx={{
-              display: { xs: 'none', sm: 'flex' },
-            }}
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="end">
-                  <IconifyIcon icon="akar-icons:search" width={13} height={13} />
-                </InputAdornment>
-              ),
-            }}
-          /> */}
         </Stack>
         <Stack
           direction="row"
@@ -105,26 +91,6 @@ const Topbar = ({
               <ToggleOffIcon fontSize="large" sx={{ color: '#000' }} />
             )}
           </IconButton>
-
-          {/* <Badge
-            color="error"
-            badgeContent=" "
-            variant="dot"
-            sx={{
-              '& .MuiBadge-badge': {
-                top: 11,
-                right: 11,
-              },
-            }}
-          >
-            <IconButton
-              sx={{
-                padding: 1,
-              }}
-            >
-              <IconifyIcon icon="ph:bell-bold" width={29} height={32} />
-            </IconButton>
-          </Badge> */}
           <UserDropdown />
         </Stack>
       </Toolbar>

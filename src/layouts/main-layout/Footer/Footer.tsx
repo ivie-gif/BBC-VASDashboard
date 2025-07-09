@@ -1,10 +1,12 @@
 import { Box, Link, Stack, Typography } from '@mui/material';
 import { useBreakpoints } from 'providers/BreakpointsProvider';
 import { ReactElement } from 'react';
+import { useTheme } from '@mui/material';
 
 const Footer = ({ open }: { open: boolean }): ReactElement => {
   const { down } = useBreakpoints();
   const year = new Date().getFullYear();
+  const theme = useTheme();
 
   const isMobileScreen = down('sm');
 
@@ -18,9 +20,20 @@ const Footer = ({ open }: { open: boolean }): ReactElement => {
       pb={6.25}
       pl={{ xs: 3, sm: 5.25 }}
     >
-      <Typography variant="h6" sx={{ textAlign: { xs: 'center', sm: 'right' } }}>
-        <Box component="span" sx={{ color: 'error.main', verticalAlign: 'middle' }}>
-        &copy; Broadbased Communications, {year}.
+      <Typography
+        sx={{
+          textAlign: { xs: 'center', sm: 'right' },
+          mt: 10,
+        }}
+      >
+        <Box
+          component="span"
+          sx={{
+            verticalAlign: 'middle',
+            color: (theme) => (theme.palette.mode === 'dark' ? '#fff' : '#000'),
+          }}
+        >
+          &copy; Broadbased Communications, {year}.
         </Box>
       </Typography>
     </Stack>
