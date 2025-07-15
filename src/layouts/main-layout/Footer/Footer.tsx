@@ -1,12 +1,10 @@
-import { Box, Link, Stack, Typography } from '@mui/material';
+import { Box, Stack, Typography } from '@mui/material';
 import { useBreakpoints } from 'providers/BreakpointsProvider';
 import { ReactElement } from 'react';
-import { useTheme } from '@mui/material';
 
 const Footer = ({ open }: { open: boolean }): ReactElement => {
   const { down } = useBreakpoints();
   const year = new Date().getFullYear();
-  const theme = useTheme();
 
   const isMobileScreen = down('sm');
 
@@ -19,6 +17,11 @@ const Footer = ({ open }: { open: boolean }): ReactElement => {
       pr={{ xs: 3, sm: 5.175 }}
       pb={6.25}
       pl={{ xs: 3, sm: 5.25 }}
+      // sx={{
+      //   '& .MuiTouchRipple-root': {
+      //     bgcolor: pathname === navItem.path ? '#1677FF' : '#F7F4F8',
+      //   },
+      // }}
     >
       <Typography
         sx={{

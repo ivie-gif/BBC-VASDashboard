@@ -68,7 +68,9 @@ const MainLayout = ({ children }: PropsWithChildren): ReactElement => {
           {children}
         </Box>
       </Box>
+      <Box sx={{bgcolor: (theme) => (theme.palette.mode === 'dark' ? '' : '#F5F5F5')}}>
       <Footer open={open} />
+      </Box>
     </>
   );
 };
