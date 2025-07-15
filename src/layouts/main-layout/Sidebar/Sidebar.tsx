@@ -5,7 +5,6 @@ import SimpleBar from 'simplebar-react';
 import NavItem from './NavItem';
 import { drawerCloseWidth, drawerOpenWidth } from '..';
 import { rootPaths } from 'routes/paths';
-import { useTheme } from '@mui/material';
 
 const Sidebar = ({ open }: { open: boolean }): ReactElement => {
   return (

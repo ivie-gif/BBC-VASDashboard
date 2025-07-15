@@ -23,7 +23,7 @@ const GloMobile = (): ReactElement => {
 
   return (
     <Paper sx={{ p: { xs: 4, sm: 8 }, height: 1 }}>
-      <Typography variant="h4" color="common.white" sx={{mb: 5}}>
+      <Typography variant="h4"sx={{mb: 8, color: (theme) => (theme.palette.mode === 'dark' ? '#fff' : '#001529'),}}>
         Glo Mobile
       </Typography>
       <GloMobileTelcoChart
@@ -31,18 +31,18 @@ const GloMobile = (): ReactElement => {
         data={telcoGloMobileData}
         sx={{ height: '181px !important', flexGrow: 1 }}
       />
-      <Stack
+        <Stack
         direction="row"
         justifyContent="space-around"
         divider={
           <Divider
             orientation="vertical"
             flexItem
-            sx={{ borderColor: alpha(theme.palette.common.white, 0.06), height: 1 }}
+            sx={{ borderColor: alpha(theme.palette.common.white, 0.06), height: 1, }}
           />
         }
         px={2}
-        pt={3}
+        pt={10}
       >
         <Button
           variant="text"
@@ -62,19 +62,8 @@ const GloMobile = (): ReactElement => {
             },
           }}
           disableRipple
-          startIcon={
-            <Box
-              sx={{
-                width: 8,
-                height: 8,
-                mb: 1,
-                bgcolor: 'primary.main',
-                borderRadius: 400,
-              }}
-            />
-          }
         >
-          Volume
+          Start Date
         </Button>
         <Button
           variant="text"
@@ -94,19 +83,8 @@ const GloMobile = (): ReactElement => {
             },
           }}
           disableRipple
-          startIcon={
-            <Box
-              sx={{
-                width: 8,
-                height: 8,
-                mb: 1,
-                bgcolor: 'grey.800',
-                borderRadius: 400,
-              }}
-            />
-          }
         >
-          Service
+          End Date
         </Button>
       </Stack>
     </Paper>

@@ -38,7 +38,13 @@ const ErrorPage = (): ReactElement => {
           width: { xs: 1, sm: 340 },
         }}
       />
-      <Button href={rootPaths.homeRoot} size="large" variant="contained" component={Link}>
+      <Button
+        href={rootPaths.homeRoot}
+        size="large"
+        variant="contained"
+        component={Link}
+        sx={{ backgroundColor: '#1677FF', color: '#fff' }}
+      >
         Go to Home
       </Button>
     </Stack>
