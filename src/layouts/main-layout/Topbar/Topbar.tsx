@@ -43,6 +43,7 @@ const Topbar = ({
           ? `calc(100% - ${drawerOpenWidth}px)`
           : `calc(100% - ${drawerCloseWidth}px)`,
         paddingRight: '0 !important',
+        borderRadius: 0,
       }}
     >
       <Toolbar
@@ -51,8 +52,8 @@ const Topbar = ({
         alignItems="center"
         justifyContent="space-between"
         sx={{
-          bgcolor: 'background.default',
-          height: 116,
+          bgcolor: (theme) => (theme.palette.mode === 'dark' ? '' : '#FFFFFF'),
+          height: 80,
         }}
       >
         <Stack

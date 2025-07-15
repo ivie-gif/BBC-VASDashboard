@@ -29,7 +29,7 @@ const salesData: SaleItem[] = [
   {
     id: 2,
     icon: SmsIcon,
-    title: '500',
+    title: '$500',
     subtitle: 'Total SMSes This Month',
     increment: 8,
     color: 'primary.main',

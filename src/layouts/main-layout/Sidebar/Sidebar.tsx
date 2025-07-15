@@ -4,9 +4,8 @@ import navItems from 'data/nav-items';
 import SimpleBar from 'simplebar-react';
 import NavItem from './NavItem';
 import { drawerCloseWidth, drawerOpenWidth } from '..';
-import Image from 'components/base/Image';
 import { rootPaths } from 'routes/paths';
-import LogoImg from '../../../assets/logoImg.png';
+import { useTheme } from '@mui/material';
 
 const Sidebar = ({ open }: { open: boolean }): ReactElement => {
   return (
@@ -14,7 +13,7 @@ const Sidebar = ({ open }: { open: boolean }): ReactElement => {
       <Toolbar
         sx={{
           position: 'fixed',
-          height: 98,
+          height: 80,
           zIndex: 1,
           bgcolor: '#D36128',
           p: 0,
@@ -28,14 +27,17 @@ const Sidebar = ({ open }: { open: boolean }): ReactElement => {
               BroadBased
             </Typography>
           ) : (
-            // <Image src={LogoImg} alt="logo" height={40} />
             <Typography variant="h3" sx={{ fontWeight: 700, color: '#000' }}>
-            BBC
-          </Typography>
+              BBC
+            </Typography>
           )}
         </Link>
       </Toolbar>
-      <SimpleBar style={{ maxHeight: '100vh' }}>
+      <SimpleBar
+        style={{
+          maxHeight: '100vh',
+        }}
+      >
         <List
           component="nav"
           sx={{

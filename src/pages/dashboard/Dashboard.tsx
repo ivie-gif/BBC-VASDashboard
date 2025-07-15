@@ -102,7 +102,8 @@ const Dashboard = (): ReactElement => {
           display="flex"
           gap={5}
           gridColumn={{ xs: 'span 12', '2xl': 'span 12' }}
-          sx={{ width: '50%', mt: 15 }}
+          sx={{ width: '50%', mt: 15, }}
+
         >
           <CustomDateTimeRangePicker />
           <CustomDateTimeRangePicker />

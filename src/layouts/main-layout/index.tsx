@@ -6,6 +6,7 @@ import Footer from './Footer/Footer';
 
 export const drawerOpenWidth = 240;
 export const drawerCloseWidth = 110;
+export const drawerColor = (theme: { palette: { mode: string; }; }) => (theme.palette.mode === 'dark' ? '' : '#001529');
 
 const MainLayout = ({ children }: PropsWithChildren): ReactElement => {
   const [open, setOpen] = useState<boolean>(true);
@@ -25,7 +26,7 @@ const MainLayout = ({ children }: PropsWithChildren): ReactElement => {
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerOpenWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerOpenWidth, bgcolor: drawerColor },
           }}
         >
           <Sidebar open={open} />
@@ -39,7 +40,7 @@ const MainLayout = ({ children }: PropsWithChildren): ReactElement => {
             display: { xs: 'none', sm: 'block' },
             width: open ? drawerOpenWidth : drawerCloseWidth,
             '& .MuiDrawer-paper': {
-              width: open ? drawerOpenWidth : drawerCloseWidth,
+              width: open ? drawerOpenWidth : drawerCloseWidth, bgcolor: drawerColor,
             },
           }}
         >
@@ -55,11 +56,13 @@ const MainLayout = ({ children }: PropsWithChildren): ReactElement => {
             pr: { xs: 3, sm: 5.175 },
             pb: 6.25,
             pl: { xs: 3, sm: 5.25 },
+            bgcolor: (theme) => (theme.palette.mode === 'dark' ? '' : '#F5F5F5'),
           }}
         >
           <Toolbar
             sx={{
               height: 96,
+              mt: 10,
             }}
           />
           {children}

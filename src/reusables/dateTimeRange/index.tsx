@@ -7,7 +7,19 @@ export default function CustomDateTimeRangePicker() {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DemoContainer components={['DateTimePicker']}>
-        <DateTimePicker />
+        {/* <DateTimePicker  /> */}
+
+        <DateTimePicker
+          slotProps={{
+            openPickerIcon: {
+              sx: {
+                // color: 'success.main',
+                color: (theme) => (theme.palette.mode === 'dark' ? '#D36128' : '#D36128'),
+                fontSize: 28,
+              },
+            },
+          }}
+        />
       </DemoContainer>
     </LocalizationProvider>
   );

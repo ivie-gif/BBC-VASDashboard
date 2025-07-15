@@ -6,10 +6,10 @@ import SaleCard from './SaleCard';
 const TodaysSales = (): ReactElement => {
   return (
     <Paper sx={{ p: { xs: 4, sm: 8 }, height: 1,  }}>
-      <Typography variant="h4" color="common.white" mb={1.25}>
+      <Typography variant="h4" color={(theme) => (theme.palette.mode === 'dark' ? '#fff' : '#000')} mb={1.25}>
         Dashboard
       </Typography>
-      <Typography variant="subtitle2" color="text.disabled" mb={6}>
+      <Typography variant="subtitle2" color={(theme) => (theme.palette.mode === 'dark' ? '#D36128' : '#D36128')} mb={6}>
         SMS Summary
       </Typography>
       <Box display="grid" gridTemplateColumns="repeat(10, 1fr)" gap={{ xs: 4, sm: 6 }}>
