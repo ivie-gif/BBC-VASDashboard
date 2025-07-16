@@ -29,8 +29,15 @@ const VisitorInsights = (): ReactElement => {
         gap={2}
         mb={6}
       >
-        <Typography variant="h6" sx={{color: (theme) => (theme.palette.mode === 'dark' ? '#fff' : '#001529'), fontWeight: 'bold'}}>
-          Total Telcos
+        <Typography
+          variant="h6"
+          sx={{
+            color: (theme) => (theme.palette.mode === 'dark' ? '#fff' : '#001529'),
+            fontWeight: 600,
+            fontSize: '18px',
+          }}
+        >
+          Total Months
         </Typography>
         <Button
           variant="text"
@@ -53,8 +60,8 @@ const VisitorInsights = (): ReactElement => {
             alignItems: 'center',
             fontSize: 'body2.fontSize',
             gap: 1,
-            color: ((theme) => (theme.palette.mode === 'dark' ? '#fff' : '#fff')),
-            bgcolor: ((theme) => (theme.palette.mode === 'dark' ? '#001427' : '#001427')),
+            color: (theme) => (theme.palette.mode === 'dark' ? '#fff' : '#fff'),
+            bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#001427' : '#001427'),
             cursor: 'default',
             '&:hover': {
               bgcolor: 'background.default',
