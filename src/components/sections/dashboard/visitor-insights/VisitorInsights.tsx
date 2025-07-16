@@ -2,7 +2,7 @@ import { Box, Button, Paper, Stack, Typography } from '@mui/material';
 import VisitorInsightsChart from './VisitorInsightsChart';
 import { ReactElement, useEffect, useRef } from 'react';
 import EChartsReactCore from 'echarts-for-react/lib/core';
-import { visitorInsightsData } from 'data/chart-data/visitor-insights';
+import { mockTelcoData } from 'data/chart-data/visitor-insights';
 
 const VisitorInsights = (): ReactElement => {
   const chartRef = useRef<EChartsReactCore | null>(null);
@@ -29,8 +29,8 @@ const VisitorInsights = (): ReactElement => {
         gap={2}
         mb={6}
       >
-        <Typography variant="h4" color="common.white">
-          Visitor Insights
+        <Typography variant="h6" sx={{color: (theme) => (theme.palette.mode === 'dark' ? '#fff' : '#001529'), fontWeight: 'bold'}}>
+          Total Telcos
         </Typography>
         <Button
           variant="text"
@@ -53,8 +53,8 @@ const VisitorInsights = (): ReactElement => {
             alignItems: 'center',
             fontSize: 'body2.fontSize',
             gap: 1,
-            color: 'text.disabled',
-            bgcolor: 'background.default',
+            color: ((theme) => (theme.palette.mode === 'dark' ? '#fff' : '#fff')),
+            bgcolor: ((theme) => (theme.palette.mode === 'dark' ? '#001427' : '#001427')),
             cursor: 'default',
             '&:hover': {
               bgcolor: 'background.default',
@@ -64,12 +64,12 @@ const VisitorInsights = (): ReactElement => {
             },
           }}
         >
-          New Visitors
+          Total Messages
         </Button>
       </Stack>
       <VisitorInsightsChart
         chartRef={chartRef}
-        data={visitorInsightsData}
+        telcoData={mockTelcoData}
         sx={{ height: '342px !important', flexGrow: 1 }}
       />
     </Paper>

@@ -23,7 +23,7 @@ const NineMobile = (): ReactElement => {
 
   return (
     <Paper sx={{ p: { xs: 4, sm: 8 }, height: 1 }}>
-      <Typography variant="h4"sx={{mb: 8, color: (theme) => (theme.palette.mode === 'dark' ? '#fff' : '#001529'),}}>
+      <Typography variant="h6" sx={{mb: 8, color: (theme) => (theme.palette.mode === 'dark' ? '#fff' : '#001529'), fontWeight: 'bold'}}>
         9Mobile
       </Typography>
       <NineMobileChart

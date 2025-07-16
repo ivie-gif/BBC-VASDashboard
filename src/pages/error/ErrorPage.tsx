@@ -43,7 +43,7 @@ const ErrorPage = (): ReactElement => {
         size="large"
         variant="contained"
         component={Link}
-        sx={{ backgroundColor: '#1677FF', color: '#fff' }}
+        sx={{ backgroundColor: '#1677FF', color: '#fff', '&:hover': { backgroundColor: '#1677FF' } }}
       >
         Go to Home
       </Button>
