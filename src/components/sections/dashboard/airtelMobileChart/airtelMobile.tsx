@@ -1,4 +1,3 @@
-
 import { Box, Button, Divider, Paper, Stack, Typography, alpha, useTheme } from '@mui/material';
 import EChartsReactCore from 'echarts-for-react/lib/core';
 import { ReactElement, useEffect, useRef } from 'react';
@@ -23,7 +22,15 @@ const AirtelMobile = (): ReactElement => {
 
   return (
     <Paper sx={{ p: { xs: 4, sm: 8 }, height: 1 }}>
-      <Typography variant="h6" sx={{mb: 8, color: (theme) => (theme.palette.mode === 'dark' ? '#fff' : '#001529'), fontWeight: 'bold'}}>
+      <Typography
+        variant="h6"
+        sx={{
+          mb: 8,
+          color: (theme) => (theme.palette.mode === 'dark' ? '#fff' : '#001529'),
+          fontWeight: 600,
+          fontSize: '18px',
+        }}
+      >
         Airtel
       </Typography>
       <AirtelChart
@@ -38,7 +45,7 @@ const AirtelMobile = (): ReactElement => {
           <Divider
             orientation="vertical"
             flexItem
-            sx={{ borderColor: alpha(theme.palette.common.white, 0.06), height: 1, }}
+            sx={{ borderColor: alpha(theme.palette.common.white, 0.06), height: 1 }}
           />
         }
         px={2}

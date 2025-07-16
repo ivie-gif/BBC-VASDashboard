@@ -27,7 +27,8 @@ const MtnMobile = (): ReactElement => {
         sx={{
           mb: 8,
           color: (theme) => (theme.palette.mode === 'dark' ? '#fff' : '#001529'),
-          fontWeight: 'bold',
+          fontWeight: 600,
+          fontSize: '18px',
         }}
       >
         MTN

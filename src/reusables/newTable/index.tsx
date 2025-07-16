@@ -149,7 +149,7 @@ export function ReusableTable<T>({
             <TableHead>
               <TableRow>
                 {showCheckbox && (
-                  <TableCell padding="checkbox">
+                  <TableCell padding="checkbox" >
                     <Checkbox
                       color="primary"
                       indeterminate={
@@ -157,6 +157,7 @@ export function ReusableTable<T>({
                       }
                       checked={rows.length > 0 && selected.length === rows.length}
                       onChange={handleSelectAllClick}
+                    
                     />
                   </TableCell>
                 )}
@@ -164,6 +165,10 @@ export function ReusableTable<T>({
                   <TableCell
                     sx={{
                       px: 4,
+                      fontSize: '14px',
+                      fontWeight: 500,
+                      color: (theme) => (theme.palette.mode === 'dark' ? '#D36128' : '#212529'), 
+                      borderBottom: (theme) => `1px solid ${theme.palette.mode === 'dark' ? '#444' : '#ddd'}`
                     }}
                     key={String(headCell.id)}
                     align={headCell.numeric ? 'right' : 'left'}
@@ -171,7 +176,7 @@ export function ReusableTable<T>({
                     sortDirection={orderBy === headCell.id ? order : false}
                   >
                     <TableSortLabel
-                      active={orderBy === headCell.id}
+                      // active={orderBy === headCell.id}
                       direction={orderBy === headCell.id ? order : 'asc'}
                       onClick={(e) => handleRequestSort(e, headCell.id)}
                     >
@@ -214,6 +219,13 @@ export function ReusableTable<T>({
                       <TableCell
                         key={String(cell.id)}
                         align={cell.numeric ? 'right' : 'left'}
+                        sx={{
+                          px: 4,
+                          fontSize: '14px',
+                          fontWeight: 500,
+                          color: (theme) => (theme.palette.mode === 'dark' ? '#F2F2F2' : '#212529'),
+                          borderBottom: (theme) => `1px solid ${theme.palette.mode === 'dark' ? '#444' : '#ddd'}`
+                        }}
                       >
                         {String(row[cell.id])}
                       </TableCell>

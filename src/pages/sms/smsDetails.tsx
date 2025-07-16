@@ -139,11 +139,23 @@ const headCells: HeadCell<Dessert>[] = [
 const SMSDetails = () => {
   return (
     <Box>
-      <Typography variant="h4" color="common.dark" mb={1.25}>
+      <Typography
+        variant="h4"
+        sx={{
+          mt: -8,
+          color: (theme) => (theme.palette.mode === 'dark' ? '#F2F2F2' : '#212529'),
+          fontSize: '20px',
+          fontWeight: 600,
+        }}
+      >
         SMS Transaction Details
       </Typography>
-      <Typography variant="body1" color="common.dark" mb={1.25}>
-        9 <span>Records Found</span>
+      <Typography
+        variant="subtitle1"
+        color={(theme) => (theme.palette.mode === 'dark' ? 'common.dark' : '#212529')}
+        mb={1.25}
+      >
+        9 <span style={{ fontSize: '12px', fontWeight: 600, marginLeft: '-3px' }}>Records Found</span>
       </Typography>
 
       <ReusableTable<Dessert> rows={rows} headCells={headCells} rowKey="id" showCheckbox={false} />
