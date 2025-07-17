@@ -6,10 +6,8 @@ const AuthLayout = ({ children }: PropsWithChildren): ReactElement => {
   return (
     <Box
       sx={{
-        background: `url(${backgroundImg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
+        backgroundColor: '#dcdce6',
+        backgroundImage: `url(${backgroundImg})`,
       }}
     >
       <Stack minHeight="100vh" justifyContent="center" py={10}>

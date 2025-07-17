@@ -40,6 +40,7 @@ const Login = (): ReactElement => {
           px: { xs: 5, sm: 7.5 },
           width: { xs: '100%', sm: '350px' },
           mx: 'auto',
+          mt: -35,
           background: 'rgba(255, 255, 255, 0.55)',
           borderRadius: '16px',
           boxShadow: '0 4px 30px #4747470b',
